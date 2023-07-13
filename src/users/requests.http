@@ -1,0 +1,49 @@
+###Create a new user
+
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email": "ram@ram.com",
+  "password": "ram123"
+}
+
+###Sign in as existing user
+
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+  "email": "ram@ram.com",
+  "password": "ram123"
+}
+
+###Get the currently signed in user
+GET http://localhost:3000/auth/whoami
+
+###Sign out
+POST http://localhost:3000/auth/signout
+
+###Find a particular user with a given ID
+GET http://localhost:3000/auth/64ab93037845295bf1213b75
+
+###Find all users with a given email
+GET http://localhost:3000/auth?email=asdf@asdf.com
+
+###Delete a user given id
+DELETE http://localhost:3000/auth/64ab81e4c9e530cc3d873bb0
+
+
+###Update a user
+PATCH http://localhost:3000/auth/64ab93037845295bf1213b75
+content-type: application/json
+
+{
+  "password": "aaa"
+}
+
+###Set a color
+GET http://localhost:3000/auth/colors/red
+
+###Get the color
+GET http://localhost:3000/auth/colors
